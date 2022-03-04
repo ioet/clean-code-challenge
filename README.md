@@ -6,7 +6,7 @@ Naming things (= variables, properties, functions, methods, classes) correctly a
 
 **Be descriptive**, names have one simple purpose: They should describe what's stored in a variable or property or what a function or method does. Or what kind of object will be created when instantiating a class.
 
-## Some ground rules!
+## Some ground rules :facepunch:!
 | Variables & Constants  | Functions and Methods | Clases |
 | ------------- | ------------- | ------------- |
 | Data containers  | Commands or calculated values | Use to create "things"  |
@@ -20,6 +20,10 @@ Naming things (= variables, properties, functions, methods, classes) correctly a
 In most situations, you should avoid generic names like handle(), process(), data, item etc.
 It doesn't matter if you prefer fetch...(), get...(), retrieve...() or any other term but you should be consistent!
 
+**Examples**:
+- [Bad names](https://github.com/ioet/clean-code-challenge/blob/main/naming_Examples/01-bad-name-examples.py)
+- [Good names](https://github.com/ioet/clean-code-challenge/blob/main/naming_Examples/02-better-name-examples.py)
+- [Clean names](https://github.com/ioet/clean-code-challenge/blob/main/naming_Examples/03-clean-name-examples.py)
 
 # Comments & Formatting :bomb:
 
@@ -27,7 +31,7 @@ You could think that comments help with code readability. In reality, the opposi
 
 Proper code formatting (i.e. keeping lines short, adding blank lines etc.) on the other hand helps a lot with reading and understanding code.
 
-| Bad Comments  | Good comments |
+| [Bad comments](https://github.com/ioet/clean-code-challenge/blob/main/good_bad_comments/bad-comments.ts)  | [Good comments](https://github.com/ioet/clean-code-challenge/blob/main/good_bad_comments/good-comments.ts) |
 | ------------- | ------------- |
 | Dividers & Markers  | Legal Information |
 | Redundant Information | "Required" Explanations |
@@ -36,6 +40,8 @@ Proper code formatting (i.e. keeping lines short, adding blank lines etc.) on th
 
 ## Vertical and Horizontal formating
 ![Captura de Pantalla 2022-03-04 a la(s) 10 13 08](https://user-images.githubusercontent.com/11364767/156788869-930be01f-8cc2-412f-ac99-23068626f32d.png)
+
+[Vertical Formating example](https://github.com/ioet/clean-code-challenge/blob/main/good_bad_comments/vertical-formatting.js)
 
 # Functions (& Methods)
 
@@ -46,8 +52,11 @@ Functions are made up of three main parts:
 - Their parameters (if any) 
 - Their body
 
-## How Many Parameters Are Okay?
+## How Many Parameters Are Okay:question:
 ![Captura de Pantalla 2022-03-04 a la(s) 10 45 28](https://user-images.githubusercontent.com/11364767/156794656-73b81113-8261-467b-9b36-aa8a4c157415.png)
+
+[Functions example](https://github.com/ioet/clean-code-challenge/tree/main/functions_examples)
+
 
 ## Keep Functions Small
 Besides the number of paramters, the function body should also be kept small. In order to be small, functions should just do one thing. Exactly one thing.
@@ -99,6 +108,8 @@ if (!hasContent(blogContent)) {
 
 ### Avoid Deep Nesting
 This is very important! You should absolutely avoid deeply nested control structures since such code is highly unreadable, hard to maintain and also often error-prone.
+[dirty code](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/01-dirty-control-structures.js)
+
 ```
 function messageUser(user, message) {
   if (user) {
@@ -128,13 +139,24 @@ function messageUser(user, message) {
 }
 ```
 
+[Guards in action](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/02-guard.js)
+
 
 #### Extract Control Structures & Logic Into New Functions
 We already learned that splitting functions and keeping functions small is important. Applying this knowledge is always great, it also helps with removing deeply nested control structures.
 
+[Extracting functions](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/03-extract-functions.js)
+
+[Improving logic?](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/04-invert-logic.js)
+
+
+#### Embrace Errors
+Errors are another nice way of getting rid of redundant if checks. They allow us to utilize mechanisms built into the programming language to handle problems in the place where they should be handled (and cause them in the place where they should be caused...).
+
+[Using error](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/05-use-errors.js)
+
 #### Polymorphism & Factory Functions
 Sometimes, you end up with duplicated if statements and duplicated checks just because the code inside of these statements differs slightly.
 
-#### Embrace Errors
+[Factory function](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/07-factory-functions.js)
 
-Errors are another nice way of getting rid of redundant if checks. They allow us to utilize mechanisms built into the programming language to handle problems in the place where they should be handled (and cause them in the place where they should be caused...).
