@@ -98,17 +98,17 @@ But control structures can also lead to bad or suboptimal code and hence play an
 ### Prefer positive checks
 This is a simple one. It can make sense to use positive wording in your if checks instead of negative wording.
 ```
-if (isEmpty(blogContent)) {
+if isEmpty(blogContent):
   // throw error
-}
-if (!hasContent(blogContent)) {
+
+if not hasContent(blogContent):
   // throw error
-}
+
 ```
 
 let avoid negative checks
 ```
-if (isNotEmpty(blogContent)) {
+if isNotEmpty(blogContent):
   // continue
 }
 if not isNotEmpty(blogContent) :
