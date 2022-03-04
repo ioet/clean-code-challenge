@@ -58,7 +58,7 @@ Functions are made up of three main parts:
 Besides the number of paramters, the function body should also be kept small. In order to be small, functions should just do one thing. Exactly one thing.
 
 Example (large login function, no abtraction):
-```
+```javascript
 function login(email, password) {
   if (!email.includes('@') || password.length < 7) {
     throw new Error('Invalid input!');
@@ -71,11 +71,12 @@ function login(email, password) {
     // create a session
   } else {
     throw new Error('Invalid credentials!');
-} }
+  }
+}
 ```
 
 Example (small function, but is doing one thing?):
-```
+```javascript
 function login(email, password) {
   validateUserInput(email, password);
   verifyCredentials(email, password);
@@ -93,30 +94,28 @@ But control structures can also lead to bad or suboptimal code and hence play an
 
 ### Prefer positive checks
 This is a simple one. It can make sense to use positive wording in your if checks instead of negative wording.
-```
+```python
 if isEmpty(blogContent):
-  // throw error
+  # throw error
 
 if not hasContent(blogContent):
-  // throw error
-
+  # throw error
 ```
 
 let avoid negative checks
-```
+```python
 if isNotEmpty(blogContent):
-  // continue
-}
-if not isNotEmpty(blogContent) :
-  // throw error (?)
-}
+  # continue
+
+if not isNotEmpty(blogContent):
+  # throw error (?)
 ```
 
 ### Avoid Deep Nesting
 This is very important! You should absolutely avoid deeply nested control structures since such code is highly unreadable, hard to maintain and also often error-prone.
 [dirty code](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/01-dirty-control-structures.js)
 
-```
+```javascript
 function messageUser(user, message) {
   if (user) {
     if (message) {
@@ -125,15 +124,17 @@ function messageUser(user, message) {
         if (success) {
           console.log('Message sent!');
         }
-   } }
- } }
+      }
+    }
+  }
+}
 ```
 
 
 #### Use Guards & Fail Fast
 Guards are a great concept! Often, you can extract a nested if check and move it right to the start of a function to fail fast if some condition is (not) met and only continue with the rest of the code otherwise.
 
-```
+```javascript
 function messageUser(user, message) {
   if (!user || !message || !user.acceptsMessages) {
       return;
