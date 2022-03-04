@@ -106,6 +106,16 @@ if (!hasContent(blogContent)) {
 }
 ```
 
+let avoid negative checks
+```
+if (isNotEmpty(blogContent)) {
+  // continue
+}
+if not isNotEmpty(blogContent) :
+  // throw error (?)
+}
+```
+
 ### Avoid Deep Nesting
 This is very important! You should absolutely avoid deeply nested control structures since such code is highly unreadable, hard to maintain and also often error-prone.
 [dirty code](https://github.com/ioet/clean-code-challenge/blob/main/control_structure_examples/01-dirty-control-structures.js)
