@@ -35,6 +35,8 @@ Proper code formatting (i.e. keeping lines short, adding blank lines etc.) on th
 | Commented Out Code | Warnings |
 | Misleading Comments | To do Notes |
 
+## Vertical and Horizontal formating
+![Captura de Pantalla 2022-03-04 a la(s) 10 13 08](https://user-images.githubusercontent.com/11364767/156788869-930be01f-8cc2-412f-ac99-23068626f32d.png)
 
 
 
