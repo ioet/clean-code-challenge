@@ -18,4 +18,23 @@ Naming things (= variables, properties, functions, methods, classes) correctly a
 - **isUserValid** = True
 - bool **inputIsValid()** {}
 
+In most situations, you should avoid generic names like handle(), process(), data, item etc.
+It doesn't matter if you prefer fetch...(), get...(), retrieve...() or any other term but you should be consistent!
+
+
+# Comments & Formatting :bomb:
+
+You could think that comments help with code readability. In reality, the opposite is often the case though.
+
+Proper code formatting (i.e. keeping lines short, adding blank lines etc.) on the other hand helps a lot with reading and understanding code.
+
+| Bad Comments  | Good comments |
+| ------------- | ------------- |
+| Dividers & Markers  | Legal Information |
+| Redundant Information | "Required" Explanations |
+| Commented Out Code | Warnings |
+| Misleading Comments | To do Notes |
+
+
+
 
