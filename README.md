@@ -1,5 +1,4 @@
-# clean-code-challenge
-
+# CLEAN CODE
 
 # Naming :notebook:
 
@@ -82,6 +81,60 @@ function login(email, password) {
 A function is considered to do just one thing if all operations in the function body are on
 the same level of abstraction and one level below the function name.
 
+# Control Structures
+No matter which kind of application you're building - you will most likely also use control structures in your code: if statements, for loops, maybe also while loops or switch-case statements.
+
+But control structures can also lead to bad or suboptimal code and hence play an important role when it comes to writing clean code.
+
+### Prefer positive checks
+This is a simple one. It can make sense to use positive wording in your if checks instead of negative wording.
+```
+if (isEmpty(blogContent)) {
+  // throw error
+}
+if (!hasContent(blogContent)) {
+  // throw error
+}
+```
+
+### Avoid Deep Nesting
+This is very important! You should absolutely avoid deeply nested control structures since such code is highly unreadable, hard to maintain and also often error-prone.
+```
+function messageUser(user, message) {
+  if (user) {
+    if (message) {
+      if (user.acceptsMessages) {
+        const success = user.sendMessage(message);
+        if (success) {
+          console.log('Message sent!');
+        }
+   } }
+ } }
+```
 
 
+#### Use Guards & Fail Fast
+Guards are a great concept! Often, you can extract a nested if check and move it right to the start of a function to fail fast if some condition is (not) met and only continue with the rest of the code otherwise.
 
+```
+function messageUser(user, message) {
+  if (!user || !message || !user.acceptsMessages) {
+      return;
+  }
+  user.sendMessage(message);
+  if (success) {
+    console.log('Message sent!');
+  }
+}
+```
+
+
+#### Extract Control Structures & Logic Into New Functions
+We already learned that splitting functions and keeping functions small is important. Applying this knowledge is always great, it also helps with removing deeply nested control structures.
+
+#### Polymorphism & Factory Functions
+Sometimes, you end up with duplicated if statements and duplicated checks just because the code inside of these statements differs slightly.
+
+#### Embrace Errors
+
+Errors are another nice way of getting rid of redundant if checks. They allow us to utilize mechanisms built into the programming language to handle problems in the place where they should be handled (and cause them in the place where they should be caused...).
