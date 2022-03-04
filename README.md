@@ -7,11 +7,7 @@ Naming things (= variables, properties, functions, methods, classes) correctly a
 **Be descriptive**, names have one simple purpose: They should describe what's stored in a variable or property or what a function or method does. Or what kind of object will be created when instantiating a class.
 
 ## Some ground rules :facepunch:!
-| Variables & Constants  | Functions and Methods | Clases |
-| ------------- | ------------- | ------------- |
-| Data containers  | Commands or calculated values | Use to create "things"  |
-| We use Nouns or short prhases with adjetives  | Use verbs or short phrases | Use nouns |
-| Eg: userData, CONTANT_EMAIL | Eg: sendData(), print_document() | Ex: User(), ShoppingCart() |
+![Captura de Pantalla 2022-03-04 a la(s) 12 44 26](https://user-images.githubusercontent.com/11364767/156814789-25aadd35-f9f7-4fcd-bf12-9d4e8951216d.png)
 
 **Exception:** Boolean variables, contants, functions and methods are better named as a Yes/No question
 - **isUserValid** = True
